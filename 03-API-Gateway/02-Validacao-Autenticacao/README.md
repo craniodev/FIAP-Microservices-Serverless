@@ -1111,6 +1111,8 @@ Clique em "Ações" → "Implantar API", selecione o estágio `dev` e clique em 
 
 Marcar "Chave de API obrigatória" **não** tem efeito até você reimplantar o estágio — assim como qualquer outra mudança de configuração, ela só vale para quem chama depois do próximo deploy. Se o Postman continuar aceitando chamadas sem `x-api-key` depois deste passo, confirme que o "Implantar API" foi de fato executado no estágio `dev` (e não criado um estágio novo por engano).
 
+Se você confirmou a implantação e a chamada sem chave **ainda** retorna `200`, clique em "Implantar API" no estágio `dev` uma segunda vez. Já foi observado o primeiro deploy feito logo após marcar a opção não aplicar a mudança; o segundo aplica. Não é erro seu — reimplantar de novo é inofensivo, porque cada deploy no mesmo estágio simplesmente sobrescreve a versão publicada.
+
 </blockquote>
 </details>
 
