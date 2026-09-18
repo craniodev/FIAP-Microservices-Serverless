@@ -312,6 +312,22 @@ Substitua o conteúdo do arquivo pelo mostrado na imagem, preenchendo a URL da `
 
 ![img/lambda-01.png](img/lambda-01.png)
 
+Confirme que a seção `provider` aponta a função para a role `LabRole`, que já existe na conta do Learner Lab. Sem essa linha o deploy falha, porque a conta do AWS Academy não permite criar roles novas:
+
+```yaml
+provider:
+  name: aws
+  runtime: python3.11
+  iam:
+    role: arn:aws:iam::<sua-conta>:role/LabRole
+```
+
+Troque `<sua-conta>` pelo número da sua conta AWS. Para obtê-lo sem sair do terminal:
+
+```shell
+aws sts get-caller-identity --query Account --output text
+```
+
 </dd>
 </dl>
 
@@ -368,7 +384,7 @@ sls deploy
 <summary><b>💡 Clique para entender: o que o sls deploy faz por baixo dos panos</b></summary>
 <blockquote>
 
-O `sls deploy` empacota o código, gera um template do CloudFormation a partir do `serverless.yml` e sobe (ou atualiza) uma *stack* na conta AWS, criando a função Lambda, o *role* de execução com permissão para ler da SQS, e o Event Source Mapping descrito no passo 11. O comando é **idempotente**: rodar `sls deploy` de novo sobre uma stack já publicada apenas aplica o diff, sem duplicar recursos — pode rodar quantas vezes precisar.
+O `sls deploy` empacota o código, gera um template do CloudFormation a partir do `serverless.yml` e sobe (ou atualiza) uma *stack* na conta AWS, criando a função Lambda e o Event Source Mapping descrito no passo 11. O *role* de execução não é criado: a função reusa a `LabRole` que você indicou no `provider`, e é dela que vem a permissão para ler da SQS. O comando é **idempotente**: rodar `sls deploy` de novo sobre uma stack já publicada apenas aplica o diff, sem duplicar recursos — pode rodar quantas vezes precisar.
 
 📚 Documentação oficial: [Serverless Framework — deploy](https://www.serverless.com/framework/docs/providers/aws/cli-reference/deploy) — detalha o ciclo de empacotamento e atualização de stack via CloudFormation.
 
@@ -380,6 +396,16 @@ O `sls deploy` empacota o código, gera um template do CloudFormation a partir d
 <blockquote>
 
 As credenciais do AWS Academy Learner Lab expiram periodicamente. Refaça o passo de [Preparando Credenciais](../../01-create-codespaces/Inicio-de-aula.md) e rode `sls deploy` novamente — é seguro repetir.
+
+Se o erro citar `iam:CreateRole`, por exemplo:
+
+```
+CREATE_FAILED: IamRoleLambdaExecution
+User: arn:aws:sts::<conta>:assumed-role/voclabs/... is not authorized to
+perform: iam:CreateRole on resource: .../...-dev-us-east-1-lambdaRole
+```
+
+a causa é a linha `iam.role` faltando no `provider` do `serverless.yml`. O Learner Lab bloqueia a criação de roles, e sem essa linha o Serverless Framework tenta criar uma role própria para o serviço. Volte ao [passo 11](#passo-11), acrescente o `iam.role` apontando para a `LabRole` e rode `sls deploy` de novo.
 
 </blockquote>
 </details>
