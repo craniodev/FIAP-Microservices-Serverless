@@ -44,11 +44,17 @@ Acesse o seu repositório no GitHub que fez fork do repositório da disciplina *
 
 Clique em `Sync Fork` no meio da tela para sincronizar o repositório com o repositório original. Caso tenha algo para sincronizar, clique em `Update branch`.
 
+![](img/sync1.png)
+
+![](img/sync2.png)
+
 </dd>
 </dl>
 
 > [!NOTE]
 > Caso não tenha nada para sincronizar, a mensagem será `This branch is not behind the upstream` e não será necessário fazer nada.
+
+![](img/sync3.png)
 
 ---
 
@@ -82,6 +88,8 @@ Acesse o link [GitHub Codespaces](https://github.com/codespaces).
 <dd>
 
 Clique no nome do Codespaces que você criou para as aulas, derivado do repositório FIAP-Microservices-Serverless.
+
+![](img/codespacess11.png)
 
 </dd>
 </dl>
@@ -144,6 +152,8 @@ code ~/.aws/credentials
 
 Com o arquivo `credentials` aberto, clique nele e acesse o [AWS Academy](https://www.awsacademy.com/vforcesite/LMS_Login) para entrar na conta AWS Academy no laboratório informado pelo professor.
 
+![](img/ac1.png)
+
 </dd>
 </dl>
 
@@ -160,6 +170,8 @@ Com o arquivo `credentials` aberto, clique nele e acesse o [AWS Academy](https:/
 <dd>
 
 Na lateral esquerda, clique em `AWS Academy Learner Lab` e clique em `Módulos`.
+
+![](img/ac2.png)
 
 </dd>
 </dl>
@@ -178,6 +190,8 @@ Na lateral esquerda, clique em `AWS Academy Learner Lab` e clique em `Módulos`.
 
 Clique em `Iniciar os laboratórios de aprendizagem da AWS Academy`.
 
+![](img/ac3.png)
+
 </dd>
 </dl>
 
@@ -194,6 +208,8 @@ Clique em `Iniciar os laboratórios de aprendizagem da AWS Academy`.
 <dd>
 
 Clique em `Start Lab` para iniciar o laboratório. Aguarde até que a bolinha ao lado do texto `AWS`, no canto superior esquerdo da tela, fique verde. Clique em `AWS` para abrir a conta AWS em outra aba do navegador.
+
+![](img/ac4.png)
 
 </dd>
 </dl>
@@ -212,6 +228,8 @@ Clique em `Start Lab` para iniciar o laboratório. Aguarde até que a bolinha ao
 
 Ainda na aba do AWS Academy, clique em `AWS Details`, no canto superior direito da tela.
 
+![](img/ac5.png)
+
 </dd>
 </dl>
 
@@ -229,6 +247,8 @@ Ainda na aba do AWS Academy, clique em `AWS Details`, no canto superior direito 
 
 Em `AWS CLI`, clique em `Show` para ver as credenciais de acesso à conta AWS Academy.
 
+![](img/ac6.png)
+
 </dd>
 </dl>
 
@@ -245,6 +265,8 @@ Em `AWS CLI`, clique em `Show` para ver as credenciais de acesso à conta AWS Ac
 <dd>
 
 Copie as credenciais e cole no arquivo `credentials` que você abriu no passo 6, no Codespaces. Depois, salve o arquivo e feche.
+
+![](img/ac7.png)
 
 </dd>
 </dl>

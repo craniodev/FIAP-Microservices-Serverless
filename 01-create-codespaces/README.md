@@ -59,6 +59,8 @@ Você vai utilizar sua conta do GitHub para acessar o Codespaces. Caso não tenh
 
 Acesse o repositório [FIAP-Microservices-Serverless](https://github.com/vamperst/FIAP-Microservices-Serverless/tree/master) e, no canto superior da tela, clique no botão `Fork` para copiar o repositório para a sua conta.
 
+![](img/fork1-1.png)
+
 </dd>
 </dl>
 
@@ -75,6 +77,8 @@ Acesse o repositório [FIAP-Microservices-Serverless](https://github.com/vampers
 <dd>
 
 Você será redirecionado para a tela de fork do repositório. Deixe a opção `Copy the master branch only` **desmarcada**, para que sejam copiadas todas as branches do repositório. Clique em `Create Fork`.
+
+![](img/fork2-1.png)
 
 </dd>
 </dl>
@@ -93,6 +97,8 @@ Você será redirecionado para a tela de fork do repositório. Deixe a opção `
 
 Acesse o link [GitHub Codespaces](https://github.com/codespaces) e clique em `Get Started for free`.
 
+![](img/codespaces1.png)
+
 </dd>
 </dl>
 
@@ -109,6 +115,8 @@ Acesse o link [GitHub Codespaces](https://github.com/codespaces) e clique em `Ge
 <dd>
 
 Clique em `New codespace` no canto superior direito para criar um novo ambiente.
+
+![](img/codespaces2.png)
 
 </dd>
 </dl>
@@ -133,6 +141,8 @@ Deixe as opções da tela da seguinte forma e clique em `Create Codespace`:
 **6.4.** Region: `US East`
 **6.5.** Machine type: `2-core`
 
+![](img/codespaces3.png)
+
 </dd>
 </dl>
 
@@ -149,6 +159,8 @@ Deixe as opções da tela da seguinte forma e clique em `Create Codespace`:
 <dd>
 
 Após a criação do ambiente, você será redirecionado para o Codespaces. Se quiser acompanhar o processo, clique em `Building codespace`, no canto inferior direito, para abrir os logs de criação.
+
+![](img/codespaces4.png)
 
 </dd>
 </dl>
@@ -230,6 +242,8 @@ Caso já tenha conta, acesse [awsacademy.com/LMS_Login](https://www.awsacademy.c
 
 Dentro da plataforma, clique em `Cursos` na lateral esquerda e clique no curso da disciplina atual.
 
+![](img/academy1.png)
+
 </dd>
 </dl>
 
@@ -246,6 +260,8 @@ Dentro da plataforma, clique em `Cursos` na lateral esquerda e clique no curso d
 <dd>
 
 Dentro do curso, clique em `Módulos` na lateral esquerda.
+
+![](img/academy2.png)
 
 </dd>
 </dl>
@@ -264,6 +280,8 @@ Dentro do curso, clique em `Módulos` na lateral esquerda.
 
 Clique em `Iniciar os laboratórios de aprendizagem da AWS Academy`.
 
+![](img/academy3.png)
+
 </dd>
 </dl>
 
@@ -280,6 +298,8 @@ Clique em `Iniciar os laboratórios de aprendizagem da AWS Academy`.
 <dd>
 
 Se for seu primeiro acesso, aparecerão os 2 contratos de termos e condições. Role até o final e aceite após a leitura. Caso já tenha feito isso antes, siga direto para o próximo passo.
+
+![](img/academy4.png)
 
 </dd>
 </dl>
@@ -298,6 +318,8 @@ Se for seu primeiro acesso, aparecerão os 2 contratos de termos e condições. 
 
 Clique no link iniciando com `Academy-CUR` para acessar a conta AWS. Caso peça consentimento, clique em `I agree` e execute o passo novamente.
 
+![](img/academy8.png)
+
 </dd>
 </dl>
 
@@ -315,6 +337,10 @@ Clique no link iniciando com `Academy-CUR` para acessar a conta AWS. Caso peça 
 
 Cada sessão terá 4 horas. Após esse tempo você terá que iniciar outra sessão, mas os dados gravados na conta AWS ficam salvos até o final do curso ou entrega do trabalho final da disciplina. Clique em `Start Lab` para iniciar uma sessão. Esse processo pode demorar alguns minutos.
 
+![](img/academy5.png)
+
+![](img/academy6.png)
+
 </dd>
 </dl>
 
@@ -331,6 +357,8 @@ Cada sessão terá 4 horas. Após esse tempo você terá que iniciar outra sess�
 <dd>
 
 Quando tudo estiver pronto, a bolinha ao lado do texto `AWS`, no canto superior esquerdo da tela, ficará verde. Clique em `AWS` para abrir a conta AWS em outra aba do navegador.
+
+![](img/academy7.png)
 
 </dd>
 </dl>
@@ -375,6 +403,8 @@ Abra uma aba do console AWS no [serviço S3](https://us-east-1.console.aws.amazo
 
 Clique em `Criar bucket`.
 
+![](img/s3CreateBucket.png)
+
 </dd>
 </dl>
 
@@ -391,6 +421,8 @@ Clique em `Criar bucket`.
 <dd>
 
 Dê ao bucket o nome `base-config-<SEU RM>` e clique em `Criar`.
+
+![](img/createBucket.png)
 
 </dd>
 </dl>
@@ -475,6 +507,8 @@ Por enquanto o arquivo estará vazio.
 
 Na aba do AWS Academy onde você acessou a conta AWS, no canto superior direito, clique em `AWS Details` e depois em `Show` nos campos de AWS CLI.
 
+![](img/codespaces6.png)
+
 </dd>
 </dl>
 
@@ -492,6 +526,8 @@ Na aba do AWS Academy onde você acessou a conta AWS, no canto superior direito,
 
 Copie o conteúdo da credencial para a área de transferência (`Ctrl+C`).
 
+![](img/codespaces7.png)
+
 </dd>
 </dl>
 
@@ -508,6 +544,8 @@ Copie o conteúdo da credencial para a área de transferência (`Ctrl+C`).
 <dd>
 
 Volte para o Codespaces, cole o conteúdo copiado no arquivo `~/.aws/credentials` e salve o arquivo com `Ctrl+S`.
+
+![](img/codespaces8.png)
 
 </dd>
 </dl>
@@ -530,6 +568,8 @@ Para testar, execute o comando abaixo no terminal do Codespaces:
 aws s3 ls
 ```
 
+![](img/codespaces9.png)
+
 </dd>
 </dl>
 
@@ -550,3 +590,5 @@ Confira se colou o conteúdo completo do arquivo de credenciais (incluindo `[def
 
 > [!CAUTION]
 > **SEMPRE DESLIGUE** o ambiente ao final de cada aula, para não gerar custos extras nem acabar com suas horas gratuitas no Codespaces. Para desligar, acesse [GitHub Codespaces](https://github.com/codespaces), clique nos 3 pontinhos ao lado do ambiente e clique em `Stop Codespace`.
+
+![](img/codespaces10.png)
