@@ -319,14 +319,10 @@ provider:
   name: aws
   runtime: python3.11
   iam:
-    role: arn:aws:iam::<sua-conta>:role/LabRole
+    role: !Sub arn:aws:iam::${AWS::AccountId}:role/LabRole
 ```
 
-Troque `<sua-conta>` pelo número da sua conta AWS. Para obtê-lo sem sair do terminal:
-
-```shell
-aws sts get-caller-identity --query Account --output text
-```
+O `${AWS::AccountId}` é resolvido pelo próprio CloudFormation no momento do deploy, com o número da conta em que você está. Você não precisa descobrir nem digitar o seu — o bloco acima é igual para todos.
 
 </dd>
 </dl>
