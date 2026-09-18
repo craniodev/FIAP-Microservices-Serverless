@@ -122,6 +122,8 @@ aws sqs get-queue-url --queue-name demoqueue_dest | jq .QueueUrl
 
 ![at](img/lambda-01.png)
 
+A URL que aparece na imagem contém o número da conta de quem gravou a aula. A sua é diferente: use a que o comando acima devolveu, não a da imagem.
+
 </dd>
 </dl>
 
