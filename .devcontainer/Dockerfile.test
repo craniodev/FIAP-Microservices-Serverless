@@ -1,0 +1,45 @@
+# Imagem de teste offline dos labs FIAP-Microservices-Serverless.
+# Reproduz as dependencias de .devcontainer/devcontainer.json (mesmas versoes),
+# sem docker-in-docker (nao precisamos rodar containers dentro do container de teste).
+FROM mcr.microsoft.com/devcontainers/base:ubuntu
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Python 3 + pip (feature aws-cli/terraform do devcontainer.json ja assumem apt disponivel)
+RUN apt-get update -y \
+    && apt-get install -y --no-install-recommends \
+        python3 \
+        python3-pip \
+        python3-venv \
+        unzip \
+        curl \
+        git \
+        gnupg \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install --no-cache-dir --break-system-packages pyyaml
+
+# AWS CLI v2 (mesma major da feature aws-cli:1 do devcontainer.json)
+RUN ARCH=$(dpkg --print-architecture) \
+    && if [ "$ARCH" = "arm64" ]; then AWS_ARCH="aarch64"; else AWS_ARCH="x86_64"; fi \
+    && curl -sSL "https://awscli.amazonaws.com/awscli-exe-linux-${AWS_ARCH}.zip" -o /tmp/awscliv2.zip \
+    && unzip -q /tmp/awscliv2.zip -d /tmp \
+    && /tmp/aws/install \
+    && rm -rf /tmp/awscliv2.zip /tmp/aws
+
+# Terraform (mesma feature terraform:1 do devcontainer.json)
+RUN ARCH=$(dpkg --print-architecture) \
+    && TF_VERSION="1.9.8" \
+    && curl -sSL "https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_${ARCH}.zip" -o /tmp/terraform.zip \
+    && unzip -q /tmp/terraform.zip -d /usr/local/bin \
+    && rm -f /tmp/terraform.zip
+
+# Node LTS via NodeSource (mesma feature node:1 versao lts do devcontainer.json)
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+    && apt-get install -y --no-install-recommends nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
+# Serverless Framework na MESMA versao pinada em script.sh
+RUN npm i -g serverless@3.39.0
+
+WORKDIR /work
